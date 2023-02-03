@@ -23,7 +23,8 @@ export class CiPipeline extends cdk.Stack {
           ],
           commands: [
               'npm test',
-          ]
+          ],
+          primaryOutputDirectory: 'cdk/cdk.out',
       })
   })
   }
