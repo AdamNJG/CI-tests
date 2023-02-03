@@ -1,6 +1,4 @@
 import * as cdk from 'aws-cdk-lib';
-import { Artifact, Pipeline } from 'aws-cdk-lib/aws-codepipeline';
-import { CodeCommitSourceAction } from 'aws-cdk-lib/aws-codepipeline-actions';
 import { CodePipeline, ShellStep } from 'aws-cdk-lib/pipelines';
 import { CodePipelineSource } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
