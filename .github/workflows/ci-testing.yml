@@ -19,7 +19,7 @@ jobs:
         run: npm run build --if-present
       - name: Run tests
         id: testStep
-        run: npm test >> $TestResults
+        run: npm test >> $GITHUB_OUTPUT
       - name: always Run
         if: success() || failure()
         uses: AdamNJG/CI-Action@v1.5
