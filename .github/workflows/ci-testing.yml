@@ -17,7 +17,7 @@ jobs:
         run: npm ci
       - name: Build node
         id: buildStep
-        run: echo "BUILD_OUTPUT=$(npm run build --if-present) >> $GITHUB_OUTPUT
+        run: echo "BUILD_OUTPUT=$(npm run build --if-present) >> $GITHUB_OUTPUT"
       - name: Run tests
         id: testStep
         run: echo "TEST_OUTPUT=$(npm test) >> $GITHUB_OUTPUT"
@@ -27,5 +27,6 @@ jobs:
         with:
           test-status: $LASTEXITCODE
       - name: build and test results
-        run: echo "build ${{steps.buildStep.outputs.BUILD_OUTPUT}}, test ${{steps.testStep.outputs.TEST_OUTPUT}} "
+        if: success() || failure()
+        run: echo "build ${{steps.buildStep.outputs.BUILD_OUTPUT}}, test ${{steps.testStep.outputs.TEST_OUTPUT}}"
       
