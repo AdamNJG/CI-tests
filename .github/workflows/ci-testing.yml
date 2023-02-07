@@ -26,7 +26,3 @@ jobs:
         uses: AdamNJG/CI-Action@v1.5
         with:
           test-status: $LASTEXITCODE
-      - name: build and test results
-        if: success() || failure()
-        run: echo "build ${{steps.buildStep.outputs.build}}, test ${{steps.testStep.outputs.test}}"
-      
