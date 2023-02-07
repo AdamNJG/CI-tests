@@ -27,8 +27,8 @@ jobs:
           test-status: ${{steps.testStep.outputs.TEST_OUTPUT}}
       - name: stuff
         if: success() || failure()
-        run: echo "${{steps.testStep.outputs.test}}
+        run: echo ${{steps.testStep.outputs.test}}
       - name: morestuff
         if: success() || failure()
-        run: echo "${{steps.testStep.outputs.TEST_OUTPUT}}
+        run: echo ${{steps.testStep.outputs.TEST_OUTPUT}}
       
