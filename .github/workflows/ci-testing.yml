@@ -20,8 +20,8 @@ jobs:
         run: echo "BUILD_OUTPUT=$(npm run build --if-present) >> $GITHUB_OUTPUT"
       - name: Run tests
         id: testStep
-        working-directory: 'src/TestResults' 
+        working-directory: 'src' 
         run: npm test --json --outputFile=test-results.json
       - name: showResults
         if: success() || failure()
-        run: ls 'src/TestResults'
+        run: cat 'src/test-results.json'
