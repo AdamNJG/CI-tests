@@ -24,4 +24,4 @@ jobs:
         run: npm test --json --outputFile=test-results.json
       - name: showResults
         if: success() || failure()
-        run: cat 'src/test-results.json'
+        run: ls src
