@@ -12,8 +12,6 @@ describe('User Tests', () =>{
     expect(user.lastName).toBe(lastName);
   });
 
-  test('failing test', () => {
-    expect(true).toBe(false);
-  })
+  stuff
 
 });
