@@ -12,6 +12,6 @@ describe('User Tests', () =>{
     expect(user.lastName).toBe(lastName);
   });
 
-  stuff
+  stuff|
 
 });
