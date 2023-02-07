@@ -20,8 +20,11 @@ jobs:
       - name: Run tests
         id: testStep
         run: echo "::set-output name=TEST_OUTPUT::$(npm test)"
-      - name: always Run
+      - name: check tests
         if: success() || failure()
         uses: AdamNJG/CI-Action@v1.5
         with:
           test-status: ${{steps.testStep.outputs.TEST_OUTPUT}}
+      - name: always Run
+        if: success() || failure()
+        run: echo ${{steps.testStep.outputs.TEST_OUTPUT}}
