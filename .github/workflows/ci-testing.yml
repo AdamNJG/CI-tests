@@ -19,16 +19,10 @@ jobs:
         run: npm run build --if-present
       - name: Run tests
         id: testStep
-        run: echo "TEST_OUTPUT"=$(npm test) >> $GITHUB_OUTPUT
+        run: npm test
       - name: check tests
         if: success() || failure()
         uses: AdamNJG/CI-Action@v1.5
         with:
-          test-status: ${{steps.testStep.outputs.TEST_OUTPUT}}
-      - name: stuff
-        if: success() || failure()
-        run: echo ${{steps.testStep.outputs.test}}
-      - name: morestuff
-        if: success() || failure()
-        run: echo ${{steps.testStep.outputs.TEST_OUTPUT}}
+          test-status: ${{steps.testStep.outputs.test}}
       
