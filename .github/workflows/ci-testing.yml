@@ -21,7 +21,7 @@ jobs:
       - name: Run tests
         id: testStep
         working-directory: 'src' 
-        run: npm test --json --outputFile=test-results.json
+        run: jest --json --outputFile=test-results.json
       - name: showResults
         if: success() || failure()
         run: ls src
