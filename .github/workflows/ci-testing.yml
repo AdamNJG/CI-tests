@@ -20,9 +20,7 @@ jobs:
         run: echo "BUILD_OUTPUT=$(npm run build --if-present) >> $GITHUB_OUTPUT"
       - name: Run tests
         id: testStep
-        run: echo "TEST_OUTPUT=$(npm test) >> $GITHUB_OUTPUT"
-      - name: check tests
+        run: npm test --json --outputFile=test-results.json
+      - name: showResults
         if: success() || failure()
-        uses: AdamNJG/CI-Action@v1.5
-        with:
-          test-status: $LASTEXITCODE
+        run: ls
