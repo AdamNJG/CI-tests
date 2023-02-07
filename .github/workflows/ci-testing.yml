@@ -16,13 +16,16 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build node
-        run: npm run build --if-present
+        id: buildStep
+        run: echo "BUILD_OUTPUT=$(npm run build --if-present) >> $GITHUB_OUTPUT
       - name: Run tests
         id: testStep
-        run: npm test
+        run: echo "TEST_OUTPUT=$(npm test) >> $GITHUB_OUTPUT"
       - name: check tests
         if: success() || failure()
         uses: AdamNJG/CI-Action@v1.5
         with:
-          test-status: ${{steps.testStep.outputs.test}}
+          test-status: $LASTEXITCODE
+      - name: build and test results
+        run: echo "build ${{steps.buildStep.outputs.BUILD_OUTPUT}}, test ${{steps.testStep.outputs.TEST_OUTPUT}} "
       
