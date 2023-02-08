@@ -26,6 +26,4 @@ jobs:
         run: jest --json --outputFile=test-results.json
       - name: showResults
         if: failure()
-        uses: srt32/revert@v0.0.1
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: './revert.sh'
