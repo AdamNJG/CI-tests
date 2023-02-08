@@ -26,5 +26,6 @@ HEAD_BRANCH="main"
 git config --global user.email "AdamNJG@github.com"
 git config --global user.name "ANJG auto revert"
 
-git reset --hard HEAD^
-git push origin $HEAD_BRANCH --force
+git pull origin $HEAD_BRANCH
+git revert $COMMIT_TO_REVERT --no-edit
+git push origin $HEAD_BRANCH
