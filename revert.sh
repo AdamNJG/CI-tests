@@ -19,7 +19,7 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
 	exit 1
 fi
 
-echo "$GITHUB_TOKEN"
+echo $REPO_FULLNAME
 
 URI=https://api.github.com
 API_HEADER="Accept: application/vnd.github.v3+json"
