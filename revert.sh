@@ -1,15 +1,16 @@
 #!/bin/bash
 set -e
 
-# get the SHA to revert
-COMMIT_TO_REVERT=$(jq -r ".comment.body" "$GITHUB_EVENT_PATH" | cut -c 9-)
-
-if [[ "$(jq -r ".action" "$GITHUB_EVENT_PATH")" != "created" ]]; then
-	echo "This is not a new comment event!"
-	exit 78
+if [ -z "$1" ]
+then 
+  echo input is empty! 
+  exit -1
 fi
 
-PR_NUMBER=$(jq -r ".issue.number" "$GITHUB_EVENT_PATH")
+echo "$1"
+# get the SHA to revert
+COMMIT_TO_REVERT=$1
+
 REPO_FULLNAME=$(jq -r ".repository.full_name" "$GITHUB_EVENT_PATH")
 echo "Collecting information about PR #$PR_NUMBER of $REPO_FULLNAME..."
 
