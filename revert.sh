@@ -33,6 +33,6 @@ git config --global user.name "ANJG auto revert"
 
 set -o xtrace
 
-git pull $HEAD_BRANCH
+git pull origin $HEAD_BRANCH
 git revert $COMMIT_TO_REVERT --no-edit
 git push origin $HEAD_BRANCH
