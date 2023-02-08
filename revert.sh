@@ -23,12 +23,5 @@ echo $REPO_FULLNAME
 
 HEAD_BRANCH="main"
 
-git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
-git config --global user.email "AdamNJG@github.com"
-git config --global user.name "ANJG auto revert"
-
-set -o xtrace
-
-git pull origin $HEAD_BRANCH
 git revert $COMMIT_TO_REVERT --no-edit
 git push origin $HEAD_BRANCH
