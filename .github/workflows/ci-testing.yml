@@ -28,4 +28,4 @@ jobs:
         if: success() || failure()
         uses: AdamNJG/CI-Action@v1.91
         with:
-          build-status: src/test-results.json
+          build-status: cat 'src/test-results.json'
