@@ -30,8 +30,8 @@ HEAD_REPO=$(echo "$pr_resp" | jq -r .head.repo.full_name)
 HEAD_BRANCH=$(echo "$pr_resp" | jq -r .head.ref)
 
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
-git config --global user.email "revert@github.com"
-git config --global user.name "GitHub Revert Action"
+git config --global user.email "AdamNJG@github.com"
+git config --global user.name "ANJG auto revert"
 
 set -o xtrace
 
