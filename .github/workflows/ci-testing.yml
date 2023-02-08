@@ -26,6 +26,6 @@ jobs:
         run: jest --json --outputFile=test-results.json
       - name: showResults
         if: success() || failure()
-        uses: AdamNJG/CI-Action@v1.7
+        uses: AdamNJG/CI-Action@v1.8
         with:
           build-status: src/test-results.json
