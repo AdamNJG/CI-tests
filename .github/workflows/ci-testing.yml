@@ -26,4 +26,4 @@ jobs:
         run: jest --json --outputFile=test-results.json
       - name: showResults
         if: failure()
-        run: './revert.sh ${{ github.event.pull_request.head.sha }}'
+        run: echo ${{ github.event.pull_request.head.sha }}
