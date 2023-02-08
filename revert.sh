@@ -28,7 +28,7 @@ pr_resp=$(curl -X GET -s -H "${AUTH_HEADER}" -H "${API_HEADER}" \
           "${URI}/repos/$REPO_FULLNAME/pulls/$PR_NUMBER")
 
 HEAD_REPO=$(echo "$pr_resp" | jq -r .head.repo.full_name)
-HEAD_BRANCH="MAIN"
+HEAD_BRANCH="main"
 
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 git config --global user.email "AdamNJG@github.com"
