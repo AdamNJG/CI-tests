@@ -1,0 +1,28 @@
+{
+  "name": "ci-tests",
+  "version": "0.0.1",
+  "description": "testing continuous integration",
+  "scripts": {
+    "start:dev": "npx ts-node ./src/index.ts",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamNJG/CI-tests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdamNJG/CI-tests/issues"
+  },
+  "homepage": "https://github.com/AdamNJG/CI-tests#readme",
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "jest": "^29.4.1",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "typescript": "^4.9.5"
+  }
+}
