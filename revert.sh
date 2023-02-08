@@ -36,10 +36,10 @@ git config --global user.name "ANJG auto revert"
 
 set -o xtrace
 
-git fetch origin $HEAD_BRANCH
+#git fetch origin $HEAD_BRANCH
 
 # do the revert
-git checkout -b $HEAD_BRANCH origin/$HEAD_BRANCH
+#git checkout -b $HEAD_BRANCH origin/$HEAD_BRANCH
 
 # check commit exists
 git cat-file -t $COMMIT_TO_REVERT
