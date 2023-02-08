@@ -21,10 +21,6 @@ fi
 
 echo $REPO_FULLNAME
 
-URI=https://api.github.com
-API_HEADER="Accept: application/vnd.github.v3+json"
-AUTH_HEADER="Authorization: token $GITHUB_TOKEN"
-
 HEAD_BRANCH="main"
 
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
